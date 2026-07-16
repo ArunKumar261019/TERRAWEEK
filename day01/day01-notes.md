@@ -1,140 +1,154 @@
 # TerraWeek Challenge – Day 1
+
 ---
 
-## Task 1: Understand IaC & Terraform
+# Task 1: Understand IaC & Terraform
 
-# What is Infrastructure as Code (IaC)?
-Infrastructure as Code (IaC) is the practice of managing and provisioning infrastructure using code instead of manually configuring resources through cloud consoles.
+## What is Infrastructure as Code (IaC)?
+Infrastructure as Code (IaC) is the practice of managing and provisioning infrastructure through code instead of manually configuring resources using cloud consoles.
 
 ### Benefits
-* Automation
-* Repeatability
-* Version Control
-* Consistency
-* Reduced Human Errors
-* Faster Deployments
+- Automation
+- Repeatability
+- Version Control
+- Consistency
+- Reduced Human Errors
+- Faster Deployments
 
 ---
 
-# What is Terraform?
-Terraform is an open-source Infrastructure as Code tool developed by HashiCorp. It allows users to define infrastructure using a declarative language called HCL (HashiCorp Configuration Language) and provision resources across multiple cloud providers.
+## What is Terraform?
+Terraform is an open-source Infrastructure as Code (IaC) tool developed by HashiCorp. It enables users to define and provision infrastructure using a declarative language called HCL (HashiCorp Configuration Language).
 
 ### Why Terraform?
-* Declarative configuration
-* Multi-cloud support
-* Provider-agnostic
-* Reusable modules
-* State management
-* Large community and ecosystem
+- Declarative configuration
+- Multi-cloud support
+- Provider-agnostic
+- Reusable modules
+- State management
+- Large community and ecosystem
 
 ---
 
-# Terraform vs Other Tools
+## Terraform vs Other Tools
 
-| Tool               | Comparison                                                                                                      |
-| ------------------ | --------------------------------------------------------------------------------------------------------------- |
-| OpenTofu           | Community-driven open-source fork of Terraform.                                                                 |
-| Pulumi             | Uses programming languages like Python, TypeScript, and Go instead of HCL.                                      |
-| AWS CloudFormation | AWS-only Infrastructure as Code solution.                                                                       |
-| Ansible            | Primarily used for configuration management and application deployment rather than infrastructure provisioning. |
+| Tool | Comparison |
+|------|------------|
+| OpenTofu | Community-driven open-source fork of Terraform. |
+| Pulumi | Uses programming languages like Python, TypeScript, and Go instead of HCL. |
+| AWS CloudFormation | AWS-only Infrastructure as Code solution. |
+| Ansible | Primarily used for configuration management and application deployment rather than infrastructure provisioning. |
 
 ---
-## Task 2: Install Terraform (latest version)
-# Terraform Installation
+
+# Task 2: Install Terraform (Latest Version)
+
 Installed the latest version of Terraform using the official HashiCorp installation guide.
 
-Verified installation using:
+### Verification Commands
+
 ```bash
 terraform version
-
 terraform -help
 ```
-
+![Terraform Version](screenshots/01-terraform-version.png)
 Also installed:
-* HashiCorp Terraform Extension for VS Code
+- HashiCorp Terraform Extension for VS Code
 
 ---
 
-## Task 3: Learn 6 Crucial Terraform Terminologies
+# Task 3: Learn 6 Crucial Terraform Terminologies
 
-# Provider
-A provider is a plugin that allows Terraform to connect to a cloud or service like AWS, Azure, or Docker.
-Example: provider "aws" { region = "us-east-1" }
+## Provider
+A provider is a plugin that enables Terraform to interact with cloud platforms or services.
 
-# Resource
-Explanation: A resource is any infrastructure object that Terraform creates and manages, such as a virtual machine or storage bucket.  Example: resource "aws_s3_bucket" "mybucket" {}
-
-# State
-Explanation: State is the file where Terraform stores information about the infrastructure it manages.  Example: terraform.tfstate keeps track of created resources.
-
-# Plan
-Explanation: A plan shows what Terraform will create, update, or delete before making any changes.  Example: Run terraform plan to preview changes.
-
-# HCL (HashiCorp Configuration Language)
-Explanation: HCL is the language used to write Terraform configuration files.  Example: resource "aws_instance" "web" {}
-
-# Module
-Explanation: A module is a reusable collection of Terraform code that helps avoid repeating the same configuration.  Example: module "network" { source = "./network" }
-
----
-## Task 4: Your First Terraform Config (no cloud account needed!)
-
-# Terraform Workflow
-
-Completed the following Terraform workflow:
-
-```bash
-terraform init
+**Example**
+```hcl
+provider "aws" {
+  region = "us-east-1"
+}
 ```
 
-Initializes the working directory and downloads required providers.
+## Resource
+A resource represents an infrastructure object that Terraform manages.
 
----
-
-```bash
-terraform fmt
+**Example**
+```hcl
+resource "aws_s3_bucket" "mybucket" {}
 ```
 
-Formats Terraform configuration files.
+## State
+Terraform stores infrastructure information in a state file (`terraform.tfstate`) to track managed resources.
 
----
-
-```bash
-terraform validate
-```
-
-Validates Terraform syntax and configuration.
-
----
+## Plan
+The execution plan previews the changes Terraform will make before applying them.
 
 ```bash
 terraform plan
 ```
 
-Displays the execution plan.
+## HCL (HashiCorp Configuration Language)
+The declarative language used to write Terraform configuration files.
+
+**Example**
+```hcl
+resource "aws_instance" "web" {}
+```
+
+## Module
+A reusable collection of Terraform configurations.
+
+**Example**
+```hcl
+module "network" {
+  source = "./network"
+}
+```
 
 ---
+
+# Task 4: Terraform Workflow
+
+### Initialize Terraform
+
+```bash
+terraform init
+```
+![Terraform Init](screenshots/03-terraform-init-plan.png)
+### Format Configuration
+
+```bash
+terraform fmt
+```
+
+### Validate Configuration
+
+```bash
+terraform validate
+```
+
+### Preview Changes
+
+```bash
+terraform plan
+```
+![Terraform Init](screenshots/03-terraform-init-plan.png)
+### Apply Configuration
 
 ```bash
 terraform apply
 ```
-
-Creates the defined resources.
-
----
+![Terraform Apply](screenshots/04-terraform-apply.png)
+### Verify Generated File
 
 ```bash
 cat greeting.txt
 ```
-
-Verified the generated file created by Terraform.
-
----
+![Terraform Apply](screenshots/05-terraform-file-output.png)
+### Destroy Resources
 
 ```bash
 terraform destroy
 ```
-
-Destroyed all managed resources.
-
+![Terraform Destroy](screenshots/06-terraform-destroy.png)
 ---
