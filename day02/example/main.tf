@@ -1,6 +1,6 @@
 # Locals: compute derived values once, reuse everywhere.
 locals {
-  name_prefix = "tws-${var.environment}"
+  name_prefix = "arun-${var.environment}"
 
   common_labels = merge(
     {

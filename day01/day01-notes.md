@@ -62,24 +62,19 @@ A provider is a plugin that allows Terraform to connect to a cloud or service li
 Example: provider "aws" { region = "us-east-1" }
 
 # Resource
-Explanation: A resource is any infrastructure object that Terraform creates and manages, such as a virtual machine or storage bucket.
-Example: resource "aws_s3_bucket" "mybucket" {}
+Explanation: A resource is any infrastructure object that Terraform creates and manages, such as a virtual machine or storage bucket.  Example: resource "aws_s3_bucket" "mybucket" {}
 
 # State
-Explanation: State is the file where Terraform stores information about the infrastructure it manages.
-Example: terraform.tfstate keeps track of created resources.
+Explanation: State is the file where Terraform stores information about the infrastructure it manages.  Example: terraform.tfstate keeps track of created resources.
 
 # Plan
-Explanation: A plan shows what Terraform will create, update, or delete before making any changes.
-Example: Run terraform plan to preview changes.
+Explanation: A plan shows what Terraform will create, update, or delete before making any changes.  Example: Run terraform plan to preview changes.
 
 # HCL (HashiCorp Configuration Language)
-Explanation: HCL is the language used to write Terraform configuration files.
-Example: resource "aws_instance" "web" {}
+Explanation: HCL is the language used to write Terraform configuration files.  Example: resource "aws_instance" "web" {}
 
 # Module
-Explanation: A module is a reusable collection of Terraform code that helps avoid repeating the same configuration.
-Example: module "network" { source = "./network" }
+Explanation: A module is a reusable collection of Terraform code that helps avoid repeating the same configuration.  Example: module "network" { source = "./network" }
 
 ---
 ## Task 4: Your First Terraform Config (no cloud account needed!)

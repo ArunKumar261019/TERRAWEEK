@@ -104,6 +104,8 @@ resource "aws_security_group" "web" {
 # it works even when the instance is replaced. (More on provisioners on Day 6.)
 
 resource "aws_instance" "web" {
+  count = 2
+
   ami                    = data.aws_ami.al2023.id
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.public.id
@@ -112,7 +114,7 @@ resource "aws_instance" "web" {
   user_data = <<-EOF
     #!/bin/bash
     dnf install -y nginx
-    echo "<h1>Hello from TerraWeek 2026 🚀</h1>" > /usr/share/nginx/html/index.html
+    echo "<h1>Day3 Terraform Creates AWS EC2</h1>" > /usr/share/nginx/html/index.html
     systemctl enable --now nginx
   EOF
 
