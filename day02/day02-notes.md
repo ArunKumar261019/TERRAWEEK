@@ -318,7 +318,7 @@ Commands used:
 ```bash
 terraform console
 ```
-(screenshots/terraform console.png)
+![](screenshots/terraformconsole.png)
 
 ---
 
@@ -341,7 +341,7 @@ terraform plan \
 -var="container_name=tws-web" \
 -var="external_port=8080"
 ```
-(screenshots/terraform plan.png)
+![](screenshots/terraformplan.png)
 ---
 
 ## Apply
@@ -351,7 +351,7 @@ terraform apply \
 -var="container_name=tws-web" \
 -var="external_port=8080"
 ```
-(screenshots/terraform on apply.png)
+![](screenshots/terraformonapply.png)
 ---
 
 ## View Outputs
@@ -359,7 +359,7 @@ terraform apply \
 ```bash
 terraform output
 ```
-(screenshots/terraform outputs.png)
+![](screenshots/terraformoutputs.png)
 
 ---
 
@@ -383,7 +383,7 @@ terraform destroy \
 -var="container_name=tws-web" \
 -var="external_port=8080"
 ```
-(screenshots/terraform destroy.png)
+![](screenshots/terraformdestroy.png)
 ---
 
 # Using terraform.tfvars
@@ -415,32 +415,3 @@ Terraform resolves variables in the following order (highest priority first):
 5. `TF_VAR_` environment variables
 6. Default values in `variables.tf`
 
----
-
-# Project Structure
-
-```
-.
-├── main.tf
-├── variables.tf
-├── outputs.tf
-├── terraform.tf
-├── terraform.tfvars
-└── README.md
-```
-
----
-
-# Learning Outcomes
-
-- Learned Terraform HCL syntax.
-- Understood blocks, arguments, and expressions.
-- Used variables with multiple data types.
-- Applied variable validation.
-- Created reusable local values.
-- Used Terraform built-in functions.
-- Deployed an Nginx Docker container using Terraform.
-- Compared `-var` arguments with `terraform.tfvars`.
-- Understood Terraform variable precedence.
-
----
