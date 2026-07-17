@@ -1,7 +1,5 @@
 # TerraWeek Day 4 – Terraform State & Remote Backends (Native Locking)
 
-**Date:** 15 July 2026
-
 ## Objective
 
 Learn how Terraform state works, why it is important, how to use state commands, and how to configure a remote backend using an Amazon S3 bucket with native state locking (`use_lockfile = true`).
@@ -255,7 +253,7 @@ Benefits:
 
 **File Name**
 
-`Screenshot_01_Backend_Infra_Apply.png`
+![](Screenshot_01_Backend_Infra_Apply.png)
 
 **Description**
 
@@ -267,7 +265,7 @@ Terraform successfully created the backend infrastructure.
 
 **File Name**
 
-`Screenshot_02_S3_Backend_Bucket.png`
+![](Screenshot_02_S3_Backend_Bucket.png)
 
 **Description**
 
@@ -279,7 +277,7 @@ AWS Console showing the S3 backend bucket with Versioning enabled.
 
 **File Name**
 
-`Screenshot_03_Backend_Initialization.png`
+![](Screenshot_03_Backend_Initialization.png)
 
 **Description**
 
@@ -291,7 +289,7 @@ Successful `terraform init` with the S3 backend configuration.
 
 **File Name**
 
-`Screenshot_04_Remote_State_Apply.png`
+![](Screenshot_04_Remote_State_Apply.png)
 
 **Description**
 
@@ -303,7 +301,7 @@ Successful `terraform apply` in `backend_demo` creating the `random_pet.demo` re
 
 **File Name**
 
-`Screenshot_05_Remote_State_File_in_S3.png`
+![](Screenshot_05_Remote_State_File_in_S3.png)
 
 **Description**
 
@@ -333,7 +331,7 @@ Temporary `.tflock` file visible during `terraform apply`.
 
 **File Name**
 
-`Screenshot_07_Terraform_State_Commands.png`
+![]Screenshot_07_Terraform_State_Commands.png`
 
 **Description**
 
@@ -346,17 +344,3 @@ terraform state show random_pet.demo
 
 terraform show
 ```
-
----
-
-# Summary
-
-In this lab, I learned:
-
-- The purpose of Terraform state.
-- Why state files are sensitive.
-- How to inspect and manage state using Terraform commands.
-- How to bootstrap backend infrastructure.
-- How to configure a remote S3 backend.
-- How Terraform 1.11 uses native S3 state locking with `use_lockfile = true`.
-- How remote state improves collaboration and prevents state conflicts.
