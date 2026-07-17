@@ -110,6 +110,7 @@ terraform plan -- shows the proposed changes.
 terraform apply -- creates the infrastructure.
 ![](screenshots/terraform-apply.png)
 ![](screenshots/aws-console.png)
+![](screenshots/terraform-creates-ec2.png)
 terraform state list -- displays the resources managed by Terraform.
 ![](screenshots/terraform-state-list
 .png)
