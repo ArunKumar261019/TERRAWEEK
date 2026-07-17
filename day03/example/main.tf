@@ -106,6 +106,11 @@ resource "aws_security_group" "web" {
 resource "aws_instance" "web" {
   count = 2
 
+  depends_on = [
+  aws_internet_gateway.igw,
+  aws_route_table_association.public
+]
+
   ami                    = data.aws_ami.al2023.id
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.public.id
