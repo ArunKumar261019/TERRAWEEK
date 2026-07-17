@@ -253,7 +253,7 @@ Benefits:
 
 **File Name**
 
-![](screenshots/Screenshot_01_Backend_Infra_Apply.png)
+![](screenshots/Screenshot_02_S3_Backend_Bucket.png)
 
 **Description**
 
@@ -265,7 +265,7 @@ Terraform successfully created the backend infrastructure.
 
 **File Name**
 
-![](screenshots/Screenshot_02_S3_Backend_Bucket.png)
+![](screenshots/Screenshot_04_Remote_State_Apply.png)
 
 **Description**
 
@@ -309,32 +309,3 @@ day04/
 
 ---
 
-## Screenshot 6
-
-**File Name**
-
-`Screenshot_06_S3_Native_Locking.png`
-
-**Description**
-
-Temporary `.tflock` file visible during `terraform apply`.
-
----
-
-## Screenshot 7
-
-**File Name**
-
-![]Screenshot_07_Terraform_State_Commands.png`
-
-**Description**
-
-Single screenshot showing the outputs of:
-
-```bash
-terraform state list
-
-terraform state show random_pet.demo
-
-terraform show
-```
