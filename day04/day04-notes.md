@@ -275,9 +275,7 @@ AWS Console showing the S3 backend bucket with Versioning enabled.
 
 ## Screenshot 3
 
-**File Name**
-
-![](screenshots/Screenshot_03_Backend_Initialization.png)
+![](screenshots/Backedn_demo_init.png)
 
 **Description**
 
@@ -287,9 +285,7 @@ Successful `terraform init` with the S3 backend configuration.
 
 ## Screenshot 4
 
-**File Name**
-
-![](screenshots/Screenshot_04_Remote_State_Apply.png)
+![](screenshots/Backend-apply.png)
 
 **Description**
 
@@ -298,8 +294,6 @@ Successful `terraform apply` in `backend_demo` creating the `random_pet.demo` re
 ---
 
 ## Screenshot 5
-
-**File Name**
 
 ![](screenshots/Screenshot_05_Remote_State_File_in_S3.png)
 
