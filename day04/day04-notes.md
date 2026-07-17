@@ -253,7 +253,7 @@ Benefits:
 
 **File Name**
 
-![](Screenshot_01_Backend_Infra_Apply.png)
+![](screenshots/Screenshot_01_Backend_Infra_Apply.png)
 
 **Description**
 
@@ -265,7 +265,7 @@ Terraform successfully created the backend infrastructure.
 
 **File Name**
 
-![](Screenshot_02_S3_Backend_Bucket.png)
+![](screenshots/Screenshot_02_S3_Backend_Bucket.png)
 
 **Description**
 
@@ -277,7 +277,7 @@ AWS Console showing the S3 backend bucket with Versioning enabled.
 
 **File Name**
 
-![](Screenshot_03_Backend_Initialization.png)
+![](screenshots/Screenshot_03_Backend_Initialization.png)
 
 **Description**
 
@@ -289,7 +289,7 @@ Successful `terraform init` with the S3 backend configuration.
 
 **File Name**
 
-![](Screenshot_04_Remote_State_Apply.png)
+![](screenshots/Screenshot_04_Remote_State_Apply.png)
 
 **Description**
 
@@ -301,7 +301,7 @@ Successful `terraform apply` in `backend_demo` creating the `random_pet.demo` re
 
 **File Name**
 
-![](Screenshot_05_Remote_State_File_in_S3.png)
+![](screenshots/Screenshot_05_Remote_State_File_in_S3.png)
 
 **Description**
 
