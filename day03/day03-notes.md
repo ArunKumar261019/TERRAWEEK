@@ -1,33 +1,104 @@
+# Day 3 Notes – Providers, Resources & Meta Arguments
+
 ## Task 1: Providers & Version Pinning
 
-required_version = ">= 1.10" Only use Terraform version 1.10 or higher.
-required_providers tells Terraform which provider to download.
-"~>"? This is called version pinning
-When you write version = "~> 6.0" Terraform can install
-6.0
-6.1
-6.2
-6.8
-But not 7.0 because version 7 may contain breaking changes.
+### `required_version`
 
-Add another provider:
+```hcl
+required_version = ">= 1.10"
+```
+
+This tells Terraform to use **version 1.10 or higher**.
+
+### `required_providers`
+
+```hcl
+required_providers {
+  aws = {
+    source  = "hashicorp/aws"
+    version = "~> 6.0"
+  }
+}
+```
+
+This tells Terraform which provider to download.
+
+### What does `~>` mean?
+
+`~>` is called **version pinning** (or the pessimistic version constraint).
+
+If you use:
+
+```hcl
+version = "~> 6.0"
+```
+
+Terraform can install:
+
+* 6.0
+* 6.1
+* 6.2
+* 6.8
+
+But **not 7.0**, because a new major version may have breaking changes.
+
+### Provider Alias
+
+```hcl
 provider "aws" {
   alias  = "west"
   region = "us-west-2"
 }
-aliases let you manage resources in multiple AWS regions.
+```
+
+A provider alias lets you use the same provider in multiple AWS regions. For example, one provider can deploy resources in `us-east-1` and another in `us-west-2`.
+
+---
 
 ## Task 2: Resources vs Data Sources
 
+### Resources
+
+```hcl
 resource "aws_vpc" "main"
+
 resource "aws_instance" "web"
-The Above two will create infrastructure.
+```
 
+Resources **create and manage infrastructure**.
+
+Examples:
+
+* `aws_vpc` creates a VPC.
+* `aws_instance` creates an EC2 instance.
+
+### Data Sources
+
+```hcl
 data "aws_ami" "al2023"
-data "aws_availability_zones" "available"
-The above two read information from AWS.
 
-Resources create, update and manage infrastructure. Data sources only retrieve information from existing infrastructure without creating anything.
+data "aws_availability_zones" "available"
+```
+
+Data sources **read existing information** from AWS.
+
+Examples:
+
+* `aws_ami` finds the latest Amazon Linux 2023 AMI.
+* `aws_availability_zones` gets the available Availability Zones.
+
+### Difference
+
+| Resources                   | Data Sources                     |
+| --------------------------- | -------------------------------- |
+| Create new infrastructure   | Read existing information        |
+| Managed by Terraform        | Read-only                        |
+| Can be updated or destroyed | Cannot create or modify anything |
+
+**In short:**
+
+* **Resources = Create and manage infrastructure.**
+* **Data Sources = Read existing information.**
 
 
 ## Task 3: Provision the Cloud Stack
