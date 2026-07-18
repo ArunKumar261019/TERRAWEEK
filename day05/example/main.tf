@@ -19,7 +19,20 @@ data "aws_ami" "al2023" {
 data "aws_vpc" "default" {
   default = true
 }
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "~> 5.0"
 
+  name = "terraweek-vpc"
+  cidr = "10.0.0.0/16"
+
+  azs             = ["us-east-1a", "us-east-1b"]
+  private_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
+  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24"]
+
+  enable_nat_gateway = false
+  enable_vpn_gateway = false
+}
 data "aws_subnets" "default" {
   filter {
     name   = "vpc-id"
@@ -41,7 +54,7 @@ locals {
 module "web_server" {
   source                 = "./modules/ec2_instance"
   name                   = "web"
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   environment            = "dev"
   ami                    = data.aws_ami.al2023.id
   subnet_id              = local.subnet_id
@@ -58,7 +71,7 @@ module "servers" {
   for_each = toset(["app", "worker", "cache"])
 
   name                   = each.key
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   environment            = "dev"
   ami                    = data.aws_ami.al2023.id
   subnet_id              = local.subnet_id
