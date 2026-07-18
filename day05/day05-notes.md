@@ -1,11 +1,5 @@
 # TerraWeek Day 5 – Modules: Reusable, Composable Infrastructure
 
-**Date:** 16 July 2026
-
-## Objective
-
-Learn how Terraform modules improve code reusability, maintainability, and scalability by creating reusable infrastructure components.
-
 ---
 
 # Task 1: Modules – The Why
@@ -116,15 +110,18 @@ terraform destroy
 ### Screenshots
 
 - **Screenshot 1:**
+
   - Terraform initialized successfully.
  
  ![](screenshots/terraform-init.png)
 
-- **Screenshot 2:** `terraform-plan.png`
+- **Screenshot 2:**
+
   - Execution plan showing EC2 instances to be created.
    ![](screenshots/terraform-plan.png)
 
-- **Screenshot 3:** `terraform-apply.png`
+- **Screenshot 3:** 
+
   - Apply completed successfully.
 
    ![](screenshots/terraform-apply.png)
@@ -132,7 +129,8 @@ terraform destroy
    ![](screenshots/terraform-apply-aws.png)
 
 
-- **Screenshot 4:** `terraform-destroy.png`
+- **Screenshot 4:** 
+
   - Resources destroyed successfully.
 
    ![](screenshots/terraform-destroy.png)
@@ -177,7 +175,8 @@ Terraform creates three EC2 instances:
 
 ### Screenshot
 
-- **Screenshot 5:** `terraform-foreach-plan.png`
+- **Screenshot 5:** 
+
   - Plan showing app, worker and cache instances.
 
   ![](screenshots/terraform-foreach-plan.png)
@@ -211,12 +210,14 @@ Terraform downloads the module during initialization.
 
 ### Screenshots
 
-- **Screenshot 6:** `registry-module-init.png`
+- **Screenshot 6:** 
+
   - Registry module downloaded successfully.
     
     ![](screenshots/registry-module-init.png)
 
-- **Screenshot 7:** `registry-module-plan.png`
+- **Screenshot 7:** 
+
   - Plan showing VPC resources.
 
   ![](screenshots/registry-module-plan.png)
@@ -279,17 +280,3 @@ module "example" {
 - Makes deployments predictable.
 - Improves collaboration across teams.
 - Simplifies debugging and rollbacks.
-
----
-
-# Learning Outcomes
-
-After completing this exercise, I learned:
-
-- What Terraform modules are.
-- Difference between root and child modules.
-- How to create reusable modules.
-- How to use module inputs and outputs.
-- How to instantiate modules using `for_each`.
-- How to consume modules from the Terraform Registry.
-- How and why to pin module versions.
